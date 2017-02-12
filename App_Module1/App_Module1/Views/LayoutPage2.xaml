@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_Module1.Views.LayoutPage2">
+  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <RelativeLayout>
+    <Label Text="This label is on top of Red Box" TextColor="Black" RelativeLayout.XConstraint="{Type=RelativeToView
+                                                                                Property=X
+                                                                                Factor=0
+                                                                                Constant=1}"/>
+    <BoxView x:Name="redBox" Color="Red" RelativeLayout.XConstraint="{Constraint Expression Type=RelativeToParent
+                                                                              Property=Width
+                                                                              Factor=0.5
+                                                                              Constant= 0" >
+      
+    </BoxView>
+
+  </RelativeLayout>
+</ContentPage>
