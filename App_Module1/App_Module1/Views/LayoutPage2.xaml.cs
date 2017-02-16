@@ -14,11 +14,24 @@ namespace App_Module1.Views
         {
             InitializeComponent();
 
+            nextButton.Clicked += nextPageclick;
+
+        }
+
+        private async void nextPageclick(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ScrollViewPage());
         }
 
         protected override async void OnAppearing()
         {
-            await redBox.FadeTo(1, 3000);
+            redBox.Opacity = 0;
+            blueBox.Opacity = 0;
+            await Task.WhenAll(
+                redBox.FadeTo(1, 2000, Easing.CubicIn),
+                blueBox.FadeTo(1, 3000)
+            );
+           
         }
     }
 }

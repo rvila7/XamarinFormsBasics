@@ -2,18 +2,56 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App_Module1.Views.LayoutPage2">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
-  <RelativeLayout>
-    <Label Text="This label is on top of Red Box" TextColor="Black" RelativeLayout.XConstraint="{Type=RelativeToView
-                                                                                Property=X
-                                                                                Factor=0
-                                                                                Constant=1}"/>
-    <BoxView x:Name="redBox" Color="Red" RelativeLayout.XConstraint="{Constraint Expression Type=RelativeToParent
-                                                                              Property=Width
-                                                                              Factor=0.5
-                                                                              Constant= 0" >
-      
-    </BoxView>
+
+  <!--Si el Type es RelativeToView se tiene que especificar ElementNAme-->
+
+
+  <AbsoluteLayout>
+    <Button BorderColor="Red" BorderWidth="2" Text="Test Button" AbsoluteLayout.LayoutBounds="0.5, 0, 0.5, 0.1" AbsoluteLayout.LayoutFlags="All">
+
+    </Button>
+  
+
+
+  <RelativeLayout AbsoluteLayout.LayoutBounds="0, 0.4, 1, 0.6" AbsoluteLayout.LayoutFlags="All">
+    <Button Text="Next Page" x:Name="nextButton"  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property=Height,Factor=0,Constant=0}"
+      RelativeLayout.WidthConstraint="{ConstraintExpression
+            Type=RelativeToParent,Property=Width,Factor=0.5,Constant=0}"
+      RelativeLayout.HeightConstraint="{ConstraintExpression
+            Type=RelativeToParent,Property=Height,Factor=0.1,Constant=0}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property=Width,Factor=0.5,Constant=0}"></Button>
+    <BoxView Color="Red" x:Name="redBox" VisualElement.Opacity="0"
+         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+            Property=Height,Factor=.15,Constant=0}"
+         RelativeLayout.WidthConstraint="{ConstraintExpression
+            Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+         RelativeLayout.HeightConstraint="{ConstraintExpression
+            Type=RelativeToParent,Property=Height,Factor=.8,Constant=0}" />
+    <BoxView Color="Blue" x:Name="blueBox"
+        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+            ElementName=redBox,Property=Y,Factor=1,Constant=20}"
+        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,
+            ElementName=redBox,Property=X,Factor=1,Constant=20}"
+        RelativeLayout.WidthConstraint="{ConstraintExpression
+            Type=RelativeToParent,Property=Width,Factor=.5,Constant=0}"
+        RelativeLayout.HeightConstraint="{ConstraintExpression
+            Type=RelativeToParent,Property=Height,Factor=.5,Constant=0}" />
+    <Label TextColor="White" Text="This Label is on top of blue box "
+       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+            ElementName=redBox,Property=Y,Factor=1,Constant=20}"
+       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,
+            ElementName=redBox,Property=X,Factor=1,Constant=20}"
+       RelativeLayout.WidthConstraint="{ConstraintExpression
+            Type=RelativeToParent,Property=Width,Factor=.5,Constant=0}"
+       RelativeLayout.HeightConstraint="{ConstraintExpression
+            Type=RelativeToParent,Property=Height,Factor=.5,Constant=0}" />
+
 
   </RelativeLayout>
+  </AbsoluteLayout>
+
+
+
 </ContentPage>

@@ -48,10 +48,11 @@ namespace App_Module1.Views
             if (spaced)
             {
                 stackLayout.Spacing = 0;
+                spaced = false;
             } else
             {
                 stackLayout.Spacing = 10;
-                spaced = false;
+                spaced = true;
             }
             
         }

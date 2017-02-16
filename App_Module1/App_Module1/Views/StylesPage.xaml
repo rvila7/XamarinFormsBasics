@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_Module1.Views.StylesPage">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style x:Key="buttonStyle1" TargetType="Button">
+        <Setter Property="BorderRadius" Value="20"></Setter>
+        <Setter Property="TextColor" Value="Aqua"></Setter>
+        <Setter Property="BorderWidth" Value="2"></Setter>
+      </Style>
+      <Style x:Key="buttonStyle2" TargetType="Button">
+        <Setter Property="BorderRadius" Value="10"></Setter>
+        <Setter Property="TextColor" Value="Red"></Setter>
+        <Setter Property="BorderWidth" Value="4"></Setter>
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <AbsoluteLayout>
+    <ScrollView AbsoluteLayout.LayoutBounds="0,0, 1, 0.5" AbsoluteLayout.LayoutFlags="All">
+      <StackLayout Spacing="5" x:Name="buttonLayout">
+        <Button Text="First Button" BackgroundColor="Blue" Style="{DynamicResource buttonStyle}"></Button>
+      </StackLayout>
+
+        
+    </ScrollView>
+    <Button AbsoluteLayout.LayoutBounds="0.5, 1, 0.6, 0.15" AbsoluteLayout.LayoutFlags="All" Text="Change Style" x:Name="changeStyleButton"></Button>
+    <Button AbsoluteLayout.LayoutBounds="0.5, 0.7, 0.6, 0.15" AbsoluteLayout.LayoutFlags="All" Text="Add Button" x:Name="addbuttonButton"></Button>
+    <Button AbsoluteLayout.LayoutBounds="0.5, 0.8, 0.6, 0.15" BackgroundColor="Red" AbsoluteLayout.LayoutFlags="All" Text="Next Page" x:Name="nextButton"></Button>
+  </AbsoluteLayout>
+</ContentPage>

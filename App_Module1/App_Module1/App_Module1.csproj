@@ -36,12 +36,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="BlurredImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\BlurredImagePage.xaml.cs">
+      <DependentUpon>BlurredImagePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LayoutPage1.xaml.cs">
       <DependentUpon>LayoutPage1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LayoutPage2.xaml.cs">
       <DependentUpon>LayoutPage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ScrollViewPage.xaml.cs">
+      <DependentUpon>ScrollViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StylesPage.xaml.cs">
+      <DependentUpon>StylesPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +80,27 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\LayoutPage2.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ScrollViewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\darkpolygon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\BlurredImagePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\StylesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

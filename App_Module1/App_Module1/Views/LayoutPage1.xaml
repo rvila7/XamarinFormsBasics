@@ -2,13 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App_Module1.Views.LayoutPage1">
-  <Label x:Name="timeLabel"
+  <ContentPage.Content>
+    
+  <StackLayout  x:Name="stackLayout">
+    <Label x:Name="timeLabel"
          VerticalOptions="Center"
          HorizontalOptions="CenterAndExpand"
          />
   <Button x:Name="changeButton" Text="Change Spacing"/>
-  <StackLayout Spacing="10" x:Name="stackLayout">
-    <Button Text="StackLayout" VerticalOptions="Start"
+    <Button Text="Next Page" VerticalOptions="Start"
            HorizontalOptions="FillAndExpand" 
             x:Name="nextButton"
             HeightRequest="40"/>
@@ -18,6 +20,8 @@
             HorizontalOptions="FillAndExpand" />
     <BoxView HeightRequest="20" Color="Blue" VerticalOptions="End"
               HorizontalOptions="FillAndExpand" 
-             Margin="0,10,0,0"/>
+             Margin="0,0,0,0"/>
   </StackLayout>
+  </ContentPage.Content>
+  
 </ContentPage>
